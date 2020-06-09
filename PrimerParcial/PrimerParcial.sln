@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimerParcial", "PrimerParcial.csproj", "{DDEA0441-FD3B-45F1-9F7B-20AD5C1672DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimerParcialTest", "..\PrimerParcialTest\PrimerParcialTest.csproj", "{44C86EDC-E17C-4C9A-8C96-1F9E5625BFFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDEA0441-FD3B-45F1-9F7B-20AD5C1672DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDEA0441-FD3B-45F1-9F7B-20AD5C1672DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDEA0441-FD3B-45F1-9F7B-20AD5C1672DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDEA0441-FD3B-45F1-9F7B-20AD5C1672DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44C86EDC-E17C-4C9A-8C96-1F9E5625BFFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44C86EDC-E17C-4C9A-8C96-1F9E5625BFFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44C86EDC-E17C-4C9A-8C96-1F9E5625BFFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44C86EDC-E17C-4C9A-8C96-1F9E5625BFFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BA330F4-AD91-4114-A9DA-BC8535BF6DC6}
+	EndGlobalSection
+EndGlobal
