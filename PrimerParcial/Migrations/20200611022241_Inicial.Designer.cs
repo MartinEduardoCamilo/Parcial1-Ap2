@@ -8,7 +8,7 @@ using PrimerParcial.DAL;
 namespace PrimerParcial.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200611015117_Inicial")]
+    [Migration("20200611022241_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -21,7 +21,7 @@
                             <label>ArticuloId</label>
                             <div class="input-group">
                                 <InputNumber @bind-Value="articulos.ArticuloId" class="form-control"></InputNumber>
-                                <ValidationMessage For="(()=>articulos.ArticuloId)"></ValidationMessage>
+                                <ValidationMessage For="(() => articulos.ArticuloId)"></ValidationMessage>
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-primary" @onclick="Buscar">Buscar</button>
                                 </div>
@@ -38,15 +38,22 @@
 
                 <div class="form-group">
                     <label>Exitencia:</label>
-                    <InputNumber @bind-Value="articulos.Existencia" class="form-control" />
+                    <InputNumber @bind-Value="articulos.Existencia" @onclick="CalcularInventario" class="form-control" />
                     <ValidationMessage For="@(() => articulos.Existencia)" />
                 </div>
 
                 <div class="form-group">
                     <label>Costo:</label>
-                    <InputNumber @bind-Value="articulos.Costo"  step="00.2" class="form-control" />
+                    <InputNumber @bind-Value="articulos.Costo" @onclick="CalcularInventario" step="00.2" class="form-control" />
                     <ValidationMessage For="@(() => articulos.Costo)" />
                 </div>
+
+                <div class="form-group">
+                    <label>Valor de inventario:</label>
+                    <InputNumber @bind-Value="articulos.Inventario" readonly="true" step="00.2" class="form-control" />
+                    <ValidationMessage For="@(() => articulos.Inventario)" />
+                </div>
+
             </form>
         </div>
         <div class="card-footer">
@@ -63,19 +70,16 @@
 
 @code {
 
-    Articulos articulos = new Articulos();
+        Articulos articulos = new Articulos();
 
-    [Parameter]
-    public int ArticuloId { get; set; }
+        [Parameter]
+        public int ArticuloId { get; set; }
 
     protected override void OnInitialized()
     {
         Nuevo();
 
-        if (ArticuloId > 0)
-        {
-            articulos = ArticulosBLL.Buscar(ArticuloId);
-        }
+        Buscar();
     }
 
     private void Nuevo()
@@ -129,5 +133,11 @@
         {
             toast.ShowError("No se pudo eliminar");
         }
+    }
+
+    private void CalcularInventario()
+    {
+        decimal calculo = (articulos.Existencia * articulos.Costo);
+        articulos.Inventario = calculo;
     }
 }
