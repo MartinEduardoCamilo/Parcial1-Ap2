@@ -4,6 +4,12 @@
 @using PrimerParcial.BLL
 @using PrimerParcial.Models
 
+@inject ToastService toast 
+
+
+
+
+
 
 @code {
 
@@ -25,6 +31,54 @@
     private void Guardar()
     {
         bool paso;
-        paso = ArticulosBLL.
+        paso = ArticulosBLL.Guardar(articulos);
+
+        if (paso)
+        {
+            Nuevo();
+            toast.ShowSuccess("Guardado Correctamente");
+        }
+        else
+        {
+            toast.ShowError("No se puedo Guardar");
+        }
+    }
+
+    private void Buscar()
+    {
+        var encontrado = ArticulosBLL.Buscar(articulos.ArticuloId);
+
+        if (encontrado != null)
+        {
+            this.articulos = encontrado;
+        }
+        else
+        {
+            toast.ShowWarning("No encontrado");
+        }
+
+    }
+
+    private void Eliminar()
+    {
+        bool eliminado;
+
+        eliminado = ArticulosBLL.Eliminar(articulos.ArticuloId);
+
+        if (eliminado)
+        {
+            Nuevo();
+            toast.ShowSuccess("Eliminado correctamente");
+        }
+        else
+        {
+            toast.ShowError("No se pudo eliminar");
+        }
+    }
+
+    private void Suma()
+    {
+        decimal suma = articulos.Costo * articulos.Existencia;
+        articulos.Inventario = suma;
     }
 }
