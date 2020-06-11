@@ -25,5 +25,17 @@ namespace PrimerParcial.Models
         [Required(ErrorMessage ="El campo inventario no debe estar vació")]
         [MinLength(0,ErrorMessage ="El campo inventario no debe ser menor que cero")]
         public decimal Inventario { get; set; }
+
+        public Articulos()
+        {
+            ArticuloId = 0;
+            Descripcion = string.Empty; 
+            Existencia = 0;
+            Costo = 0;
+            Inventario = 0;
+        }
     }
+
+    
+
 }
