@@ -1,5 +1,30 @@
-﻿@page
+﻿@page "/Articulos"
+@page "/Articulos/{ArticuloId:int}"
+
+@using PrimerParcial.BLL
+@using PrimerParcial.Models
+
 
 @code {
 
+    Articulos articulos = new Articulos();
+
+    [Parameter]
+    public int ArticuloId { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Nuevo();
+    }
+
+    private void Nuevo()
+    {
+        this.articulos = new Articulos();
+    }
+
+    private void Guardar()
+    {
+        bool paso;
+        paso = ArticulosBLL.
+    }
 }

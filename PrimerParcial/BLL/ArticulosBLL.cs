@@ -10,9 +10,7 @@ using System.Threading.Tasks;
 namespace PrimerParcial.BLL
 {
     public class ArticulosBLL
-    {
-        public class PrestamoBLL
-        {
+    {     
             public static bool Guardar(Articulos articulos)
             {
                 if (!Existe(articulos.ArticuloId))
@@ -152,5 +150,5 @@ namespace PrimerParcial.BLL
                 return encontrado;
             }
         }
-    }
-}
+   }
+
