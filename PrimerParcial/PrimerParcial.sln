@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimerParcial", "PrimerParcial.csproj", "{DDEA0441-FD3B-45F1-9F7B-20AD5C1672DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimerParcial", "PrimerParcial.csproj", "{DDEA0441-FD3B-45F1-9F7B-20AD5C1672DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimerParcialTest", "..\PrimerParcialTest\PrimerParcialTest.csproj", "{44C86EDC-E17C-4C9A-8C96-1F9E5625BFFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimerParcialTest", "..\PrimerParcialTest\PrimerParcialTest.csproj", "{44C86EDC-E17C-4C9A-8C96-1F9E5625BFFB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
