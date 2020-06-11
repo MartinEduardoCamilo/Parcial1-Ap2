@@ -38,13 +38,13 @@
 
                 <div class="form-group">
                     <label>Exitencia:</label>
-                    <InputNumber @bind-Value="articulos.Existencia" @onclick="Suma" class="form-control" />
+                    <InputNumber @bind-Value="articulos.Existencia" @onclick="Calculos" class="form-control" />
                     <ValidationMessage For="@(() => articulos.Existencia)" />
                 </div>
 
                 <div class="form-group">
                     <label>Costo:</label>
-                    <InputNumber @bind-Value="articulos.Costo" @onclick="Suma" class="form-control" />
+                    <InputNumber @bind-Value="articulos.Costo" @onclick="Calculos" class="form-control" />
                     <ValidationMessage For="@(() => articulos.Costo)" />
                 </div>
 
@@ -78,6 +78,11 @@
     protected override void OnInitialized()
     {
         Nuevo();
+
+        if (ArticuloId > 0)
+        {
+            articulos = ArticulosBLL.Buscar(ArticuloId);
+        }
     }
 
     private void Nuevo()
@@ -133,9 +138,9 @@
         }
     }
 
-    private void Suma()
+    private void Calculos()
     {
-        decimal suma = articulos.Costo * articulos.Existencia;
-        articulos.Inventario = suma;
+        decimal calcular = (articulos.Costo * articulos.Existencia);
+        articulos.Inventario = calcular;
     }
 }
