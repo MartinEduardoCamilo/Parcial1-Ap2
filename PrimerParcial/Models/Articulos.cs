@@ -15,15 +15,14 @@ namespace PrimerParcial.Models
         public string Descripcion { get; set; }
 
         [Required(ErrorMessage ="El campo existencia no debe estar vació")]
-        [MinLength(0,ErrorMessage ="La existencia no puede ser menor que cero")]
+        [Range(1, 1000000, ErrorMessage = "El rango es de 1 a 100000")]
         public int Existencia { get; set; }
 
         [Required(ErrorMessage ="El campo Costo no debe estar vacio")]
-        [MinLength(0,ErrorMessage ="Los costo no debe ser menor que cero")]
+        [Range(1, 1000000, ErrorMessage = "El rango es de 1 a 100000")]
         public decimal Costo { get; set; }
 
         [Required(ErrorMessage ="El campo inventario no debe estar vació")]
-        [MinLength(0,ErrorMessage ="El campo inventario no debe ser menor que cero")]
         public decimal Inventario { get; set; }
 
         public Articulos()
